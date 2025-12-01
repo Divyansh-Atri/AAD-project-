@@ -418,7 +418,7 @@ def demonstrate_error_mitigation():
               f"Success rate {result['success_rate']*100:.1f}%")
     
     print()
-    print("✅ Error mitigation analysis complete!")
+    print("Error mitigation analysis complete!")
 
 
 if __name__ == "__main__":

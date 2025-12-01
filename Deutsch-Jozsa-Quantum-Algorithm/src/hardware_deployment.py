@@ -68,11 +68,11 @@ class IBMQuantumDeployer:
                     instance=instance,
                     overwrite=True
                 )
-                print("✅ IBM Quantum account saved successfully!")
+                print("IBM Quantum account saved successfully!")
             
             # Load service
             self.service = QiskitRuntimeService(channel="ibm_quantum_platform")
-            print("✅ Connected to IBM Quantum!")
+            print("Connected to IBM Quantum!")
             
         except Exception as e:
             raise Exception(f"Failed to set up IBM Quantum account: {e}")
@@ -129,13 +129,13 @@ class IBMQuantumDeployer:
         
         if backend_name:
             self.backend = self.service.backend(backend_name)
-            print(f"✅ Selected backend: {backend_name}")
+            print(f"Selected backend: {backend_name}")
         else:
             # Select least busy backend
             self.backend = self.service.least_busy(
                 filters=lambda x: x.configuration().n_qubits >= min_qubits
             )
-            print(f"✅ Selected least busy backend: {self.backend.name}")
+            print(f"Selected least busy backend: {self.backend.name}")
         
         # Print backend info
         config = self.backend.configuration()
@@ -170,7 +170,7 @@ class IBMQuantumDeployer:
         start_time = time.time()
         
         # Transpile for hardware
-        print("📝 Transpiling circuit for hardware...")
+        print("Transpiling circuit for hardware...")
         transpiled = transpile(
             circuit,
             backend=self.backend,
@@ -184,7 +184,7 @@ class IBMQuantumDeployer:
         print()
         
         # Submit job using Sampler primitive
-        print(f"🚀 Submitting job to {self.backend.name}...")
+        print(f"Submitting job to {self.backend.name}...")
         sampler = Sampler(mode=self.backend)
         job = sampler.run([transpiled], shots=shots)
         job_id = job.job_id()
@@ -192,7 +192,7 @@ class IBMQuantumDeployer:
         print()
         
         # Wait for job to complete
-        print("⏳ Waiting for job to complete...")
+        print("Waiting for job to complete...")
         print("   (This may take several minutes depending on queue)")
         
         # Get results (this will block until complete)
@@ -228,7 +228,7 @@ class IBMQuantumDeployer:
                     bitstring = ''.join(str(int(b)) for b in measurement)
                     counts[bitstring] = counts.get(bitstring, 0) + 1
         except Exception as e:
-            print(f"⚠️  Warning: Could not extract counts in standard format: {e}")
+            print(f"Warning: Could not extract counts in standard format: {e}")
             print(f"   Data type: {type(data)}")
             print(f"   Available attributes: {dir(data)}")
             # Fallback: create dummy counts for testing
@@ -237,7 +237,7 @@ class IBMQuantumDeployer:
         execution_time = time.time() - start_time
         
         print()
-        print("✅ Job completed!")
+        print("Job completed!")
         print(f"   Execution time: {execution_time:.2f} seconds")
         print(f"   Counts: {counts}")
         print()
@@ -322,79 +322,77 @@ class IBMQuantumDeployer:
 
 def print_deployment_instructions():
     """Print instructions for IBM Quantum deployment."""
-    print("""
-╔══════════════════════════════════════════════════════════════════════╗
-║         IBM QUANTUM HARDWARE DEPLOYMENT INSTRUCTIONS                 ║
-╚══════════════════════════════════════════════════════════════════════╝
+    print("-" * 70)
+    print("IBM QUANTUM HARDWARE DEPLOYMENT INSTRUCTIONS")
+    print("-" * 70)
 
-STEP 1: Get IBM Quantum Access
-───────────────────────────────────────────────────────────────────────
-1. Go to: https://quantum-computing.ibm.com/
-2. Sign up for a free IBM Quantum account
-3. Navigate to: Account → API Token
-4. Copy your API token
+    print("STEP 1: Get IBM Quantum Access")
+    print("-" * 70)
+    print("1. Go to: https://quantum-computing.ibm.com/")
+    print("2. Sign up for a free IBM Quantum account")
+    print("3. Navigate to: Account -> API Token")
+    print("4. Copy your API token")
 
-STEP 2: Install Required Package
-───────────────────────────────────────────────────────────────────────
-pip install qiskit-ibm-runtime
+    print("\nSTEP 2: Install Required Package")
+    print("-" * 70)
+    print("pip install qiskit-ibm-runtime")
 
-STEP 3: Configure Your Account (One-time setup)
-───────────────────────────────────────────────────────────────────────
-from src.hardware_deployment import IBMQuantumDeployer
+    print("\nSTEP 3: Configure Your Account (One-time setup)")
+    print("-" * 70)
+    print("from src.hardware_deployment import IBMQuantumDeployer")
+    print()
+    print("deployer = IBMQuantumDeployer()")
+    print("deployer.setup_ibm_account(")
+    print("    token='YOUR_API_TOKEN_HERE',")
+    print("    instance='ibm-q/open/main'  # Free tier instance")
+    print(")")
 
-deployer = IBMQuantumDeployer()
-deployer.setup_ibm_account(
-    token='YOUR_API_TOKEN_HERE',
-    instance='ibm-q/open/main'  # Free tier instance
-)
+    print("\nSTEP 4: Run on Hardware")
+    print("-" * 70)
+    print("from src.deutsch_jozsa import DeutschJozsa")
+    print()
+    print("# Create circuit")
+    print("dj = DeutschJozsa(n_qubits=3)")
+    print("circuit = dj.create_circuit('constant', {'output_value': 0})")
+    print()
+    print("# Deploy to hardware")
+    print("deployer.select_backend()  # Auto-selects least busy")
+    print("result = deployer.run_on_hardware(circuit, shots=1024)")
+    print()
+    print("print(f'Result: {result.result}')")
+    print("print(f'Counts: {result.counts}')")
 
-STEP 4: Run on Hardware
-───────────────────────────────────────────────────────────────────────
-from src.deutsch_jozsa import DeutschJozsa
+    print("\nSTEP 5: Compare with Simulator")
+    print("-" * 70)
+    print("comparison = deployer.compare_simulator_vs_hardware(")
+    print("    circuit,")
+    print("    expected_result='constant',")
+    print("    shots=1024")
+    print(")")
 
-# Create circuit
-dj = DeutschJozsa(n_qubits=3)
-circuit = dj.create_circuit('constant', {'output_value': 0})
+    print("\nRECOMMENDED BACKENDS FOR DEUTSCH-JOZSA")
+    print("-" * 70)
+    print("* ibmq_manila (5 qubits) - Good for n=3-4")
+    print("* ibmq_quito (5 qubits) - Good for n=3-4")
+    print("* ibmq_belem (5 qubits) - Good for n=3-4")
 
-# Deploy to hardware
-deployer.select_backend()  # Auto-selects least busy
-result = deployer.run_on_hardware(circuit, shots=1024)
+    print("\nFREE TIER LIMITATIONS")
+    print("-" * 70)
+    print("* Limited to ~5 qubits")
+    print("* Shared queue (may wait in line)")
+    print("* Monthly execution time limits")
+    print("* Good for educational purposes")
 
-print(f"Result: {result.result}")
-print(f"Counts: {result.counts}")
+    print("\nTIPS FOR SUCCESS")
+    print("-" * 70)
+    print("* Start with small circuits (n=2-3 qubits)")
+    print("* Use optimization_level=3 for transpilation")
+    print("* Run during off-peak hours for faster queue")
+    print("* Use error mitigation techniques for better results")
+    print("* Compare multiple runs to assess noise impact")
 
-STEP 5: Compare with Simulator
-───────────────────────────────────────────────────────────────────────
-comparison = deployer.compare_simulator_vs_hardware(
-    circuit,
-    expected_result='constant',
-    shots=1024
-)
-
-RECOMMENDED BACKENDS FOR DEUTSCH-JOZSA
-───────────────────────────────────────────────────────────────────────
-• ibmq_manila (5 qubits) - Good for n=3-4
-• ibmq_quito (5 qubits) - Good for n=3-4
-• ibmq_belem (5 qubits) - Good for n=3-4
-
-FREE TIER LIMITATIONS
-───────────────────────────────────────────────────────────────────────
-• Limited to ~5 qubits
-• Shared queue (may wait in line)
-• Monthly execution time limits
-• Good for educational purposes
-
-TIPS FOR SUCCESS
-───────────────────────────────────────────────────────────────────────
-✓ Start with small circuits (n=2-3 qubits)
-✓ Use optimization_level=3 for transpilation
-✓ Run during off-peak hours for faster queue
-✓ Use error mitigation techniques for better results
-✓ Compare multiple runs to assess noise impact
-
-For more information: https://docs.quantum.ibm.com/
-╚══════════════════════════════════════════════════════════════════════╝
-    """)
+    print("\nFor more information: https://docs.quantum.ibm.com/")
+    print("-" * 70)
 
 
 if __name__ == "__main__":
