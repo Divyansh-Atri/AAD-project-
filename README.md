@@ -145,4 +145,4 @@ This project is licensed under the MIT License.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-See the [LICENSE](LICENSE) file for details.
+See the [LICENSE](LICENSE) file for details
