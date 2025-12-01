@@ -1,4 +1,4 @@
-"""Classical random walk implementations used for comparison baselines.comparing baselines."""
+"""Classical random walk implementations used for comparison baselines.comparing baselines"""
 
 from __future__ import annotations
 
