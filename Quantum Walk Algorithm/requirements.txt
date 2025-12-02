@@ -1,0 +1,8 @@
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+plotly>=5.18
+qiskit>=0.45
+qiskit-aer>=0.13
+qiskit-ibm-runtime>=0.19
+notebook>=7.0
