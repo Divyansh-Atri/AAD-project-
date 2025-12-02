@@ -47,6 +47,9 @@ python3 fetch_ibm_bits.py
 ```
 Requirements: Python 3, qiskit, qiskit-ibm-runtime, and an IBM Quantum API token configured as per your environment.
 
+### Note:
+The script currently contains an `API_TOKEN` constant in the file fetch_ibm_bits.py. Replace it with your IBM quantum token before running.
+
 ## Comparing Algorithms
 
 ### Run All Algorithms
