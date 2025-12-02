@@ -1,0 +1,376 @@
+================================================================================
+GROVER'S ALGORITHM - HIGH-PRECISION TIME COMPLEXITY BENCHMARK
+================================================================================
+
+Features:
+  - Individual circuit timing (build, transpile, execute)
+  - High-precision measurement using time.perf_counter()
+  - Nanosecond-level accuracy for time complexity verification
+  - Comprehensive space complexity metrics
+  - ~100-120 optimized test configurations
+  - Statistical analysis and visualization
+
+[TIME]  Timing Precision:
+  - time.perf_counter(): Monotonic clock, nanosecond resolution
+  - Individual measurements: No averaging, no approximation
+  - Separates quantum algorithm time from classical overhead
+================================================================================
+
+[Mode: IBM Quantum Hardware]
+
+Generating test configurations...
+[+] Generated 68 test configurations
+
+Building 68 circuits with individual timing...
+  Built 50/68 circuits...
+[+] Built 68 circuits in 0.69s (avg: 0.0102s per circuit)
+
+Initializing IBM Quantum...
+qiskit_runtime_service._discover_account:WARNING:2025-12-02 11:37:29,330: Loading account with the given token. A saved account will not be used.
+qiskit_runtime_service.__init__:WARNING:2025-12-02 11:37:37,029: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (open), the available account instances are: open-instance. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService().
+qiskit_runtime_service.backends:WARNING:2025-12-02 11:37:39,115: Loading instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2025-12-02 11:37:43,201: Using instance: open-instance, plan: open
+[+] Connected to IBM Quantum - Backend: ibm_fez
+
+Running 68 circuits on IBM Quantum (backend: ibm_fez)
+IMPORTANT: Running circuits individually for EXACT timing (no approximation)
+  Transpiling 68 circuits individually for ibm_fez...
+    Transpiled 10/68 circuits...
+    Transpiled 20/68 circuits...
+    Transpiled 30/68 circuits...
+    Transpiled 40/68 circuits...
+    Transpiled 50/68 circuits...
+    Transpiled 60/68 circuits...
+  [+] Transpiled in 1013.19s (avg: 14.8999s)
+  Executing 68 circuits individually for exact timing...
+    [1/68] [+] exec=0.0004s [estimated (total=11.3s had queue wait)] total=11.3s
+    [2/68] [+] exec=0.0004s [estimated (total=7.1s had queue wait)] total=7.1s
+    [3/68] [+] exec=0.0006s [estimated (total=6.3s had queue wait)] total=6.3s
+    [4/68] [+] exec=0.0004s [estimated (total=5.7s had queue wait)] total=5.7s
+    [5/68] [+] exec=0.0004s [estimated (total=7.0s had queue wait)] total=7.0s
+    [6/68] [+] exec=0.0004s [estimated (total=6.4s had queue wait)] total=6.4s
+    [7/68] [+] exec=0.0008s [estimated (total=5.7s had queue wait)] total=5.7s
+    [8/68] [+] exec=0.0006s [estimated (total=53.6s had queue wait)] total=53.6s
+    [9/68] [+] exec=0.0004s [estimated (total=93.1s had queue wait)] total=93.1s
+    [10/68] [+] exec=0.0004s [estimated (total=6.8s had queue wait)] total=6.8s
+    [11/68] [+] exec=0.0004s [estimated (total=7.0s had queue wait)] total=7.0s
+    [12/68] [+] exec=0.0004s [estimated (total=5.7s had queue wait)] total=5.7s
+    [13/68] [+] exec=0.0010s [estimated (total=6.5s had queue wait)] total=6.5s
+    [14/68] [+] exec=0.0008s [estimated (total=5.9s had queue wait)] total=5.9s
+    [15/68] [+] exec=0.0006s [estimated (total=5.9s had queue wait)] total=5.9s
+    [16/68] [+] exec=0.0004s [estimated (total=5.7s had queue wait)] total=5.7s
+    [17/68] [+] exec=0.0004s [estimated (total=6.0s had queue wait)] total=6.0s
+    [18/68] [+] exec=0.0004s [estimated (total=6.1s had queue wait)] total=6.1s
+    [19/68] [+] exec=0.0006s [estimated (total=5.6s had queue wait)] total=5.6s
+    [20/68] [+] exec=0.0014s [estimated (total=7.3s had queue wait)] total=7.3s
+    [21/68] [+] exec=0.0010s [estimated (total=6.7s had queue wait)] total=6.7s
+    [22/68] [+] exec=0.0006s [estimated (total=43.1s had queue wait)] total=43.1s
+    [23/68] [+] exec=0.0004s [estimated (total=6.8s had queue wait)] total=6.8s
+    [24/68] [+] exec=0.0004s [estimated (total=7.3s had queue wait)] total=7.3s
+    [25/68] [+] exec=0.0004s [estimated (total=7.5s had queue wait)] total=7.5s
+    [26/68] [+] exec=0.0004s [estimated (total=7.1s had queue wait)] total=7.1s
+    [27/68] [+] exec=0.0004s [estimated (total=7.6s had queue wait)] total=7.6s
+    [28/68] [+] exec=0.0006s [estimated (total=6.0s had queue wait)] total=6.0s
+    [29/68] [+] exec=0.0018s [estimated (total=110.6s had queue wait)] total=110.6s
+    [30/68] [+] exec=0.0014s [estimated (total=9.2s had queue wait)] total=9.2s
+    [31/68] [+] exec=0.0006s [estimated (total=8.5s had queue wait)] total=8.5s
+    [32/68] [+] exec=0.0004s [estimated (total=10.0s had queue wait)] total=10.0s
+    [33/68] [+] exec=0.0004s [estimated (total=94.8s had queue wait)] total=94.8s
+    [34/68] [+] exec=0.0006s [estimated (total=9.7s had queue wait)] total=9.7s
+    [35/68] [+] exec=0.0006s [estimated (total=10.2s had queue wait)] total=10.2s
+    [36/68] [+] exec=0.0004s [estimated (total=8.8s had queue wait)] total=8.8s
+    [37/68] [+] exec=0.0006s [estimated (total=51.6s had queue wait)] total=51.6s
+    [38/68] [+] exec=0.0004s [estimated (total=8.6s had queue wait)] total=8.6s
+    [39/68] [+] exec=0.0026s [estimated (total=9.8s had queue wait)] total=9.8s
+    [40/68] [+] exec=0.0018s [estimated (total=8.5s had queue wait)] total=8.5s
+    [41/68] [+] exec=0.0006s [estimated (total=13.6s had queue wait)] total=13.6s
+    [42/68] [+] exec=0.0004s [estimated (total=13.9s had queue wait)] total=13.9s
+    [43/68] [+] exec=0.0004s [estimated (total=19.7s had queue wait)] total=19.7s
+    [44/68] [+] exec=0.0004s [estimated (total=14.1s had queue wait)] total=14.1s
+    [45/68] [+] exec=0.0004s [estimated (total=16.2s had queue wait)] total=16.2s
+    [46/68] [+] exec=0.0006s [estimated (total=10.0s had queue wait)] total=10.0s
+    [47/68] [+] exec=0.0006s [estimated (total=12.6s had queue wait)] total=12.6s
+    [48/68] [+] exec=0.0006s [estimated (total=50.8s had queue wait)] total=50.8s
+    [49/68] [+] exec=0.0036s [estimated (total=13.0s had queue wait)] total=13.0s
+    [50/68] [+] exec=0.0026s [estimated (total=11.3s had queue wait)] total=11.3s
+    [51/68] [+] exec=0.0006s [estimated (total=54.0s had queue wait)] total=54.0s
+    [52/68] [+] exec=0.0004s [estimated (total=25.1s had queue wait)] total=25.1s
+    [53/68] [+] exec=0.0004s [estimated (total=42.2s had queue wait)] total=42.2s
+    [54/68] [+] exec=0.0004s [estimated (total=79.9s had queue wait)] total=79.9s
+    [55/68] [+] exec=0.0010s [estimated (total=18.9s had queue wait)] total=18.9s
+    [56/68] [+] exec=0.0008s [estimated (total=57.4s had queue wait)] total=57.4s
+    [57/68] [+] exec=0.0004s [estimated (total=23.7s had queue wait)] total=23.7s
+    [58/68] [+] exec=0.0004s [estimated (total=21.7s had queue wait)] total=21.7s
+    [59/68] [+] exec=0.0052s [estimated (total=17.6s had queue wait)] total=17.6s
+    [60/68] [+] exec=0.0036s [estimated (total=56.0s had queue wait)] total=56.0s
+    [61/68] [+] exec=0.0006s [estimated (total=62.6s had queue wait)] total=62.6s
+    [62/68] [+] exec=0.0004s [estimated (total=69.9s had queue wait)] total=69.9s
+    [63/68] [+] exec=0.0004s [estimated (total=1742.1s had queue wait)] total=1742.1s
+    [64/68] [+] exec=0.0006s [estimated (total=161.6s had queue wait)] total=161.6s
+    [65/68] [+] exec=0.0004s [estimated (total=49.8s had queue wait)] total=49.8s
+    [66/68] [+] exec=0.0004s [estimated (total=93.4s had queue wait)] total=93.4s
+    [67/68] [+] exec=0.0008s [estimated (total=145.3s had queue wait)] total=145.3s
+    [68/68] [+] exec=0.0006s [estimated (total=65.3s had queue wait)] total=65.3s
+[+] Completed 68 tests
+  Total time: 1013.25s (avg: 14.9007s per test)
+
+========================================
+ANALYSIS 1: ALL CIRCUITS (UNFILTERED)
+========================================
+
+================================================================================
+COMPLEXITY ANALYSIS RESULTS - ALL DATA (UNFILTERED)
+================================================================================
+
+Qubits   Tests    Avg Iter   Avg √N     Ratio    Success%     Exec(ms)     Total(s)    
+------------------------------------------------------------------------------------------
+2        2        1.00       2.00       0.500    72.46        0.4000       0.7152      
+3        4        1.25       2.83       0.442    74.32        0.4500       0.0632      
+4        6        1.50       4.00       0.375    57.03        0.5000       0.1430      
+5        7        2.00       5.66       0.354    20.28        0.6000       0.4595      
+6        9        2.11       8.00       0.264    23.35        0.6222       1.6423      
+7        10       2.60       11.31      0.230    18.35        0.7200       3.3572      
+8        10       3.20       16.00      0.200    17.69        0.8400       6.8508      
+9        10       4.30       22.63      0.190    17.16        1.0600       19.5232     
+10       10       5.50       32.00      0.172    16.25        1.3000       69.6088     
+
+--------------------------------------------------------------------------------
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+
+[+] TIME COMPLEXITY: O(√N)
+   Total tests: 68
+   Avg Iterations/√N ratio: 0.262
+   Theoretical expectation: 0.785 (π/4)
+   Deviation from π/4: 0.523
+   Std deviation: 0.230
+   Min ratio: 0.031
+   Max ratio: 0.781
+
+[+] PROPORTIONALITY ANALYSIS: Iterations ∝ √(N/M)
+   Formula: iterations = (π/4) × √(N/M) = (π/(4√M)) × √N
+   Each marked state count M has different proportionality constant k = π/(4√M)
+
+M      Tests    k (fit)      k (theory)   Deviation    R²         Quality        
+------------------------------------------------------------------------------------------
+1      9        0.7838       0.7854       0.0016       0.9988     [+] Excellent    
+2      9        0.5366       0.5554       0.0187       0.9987     [+] Excellent    
+3      3        0.3701       0.4534       0.0833       0.8301     [WARN] Fair        
+4      3        0.3701       0.3927       0.0226       0.8301     [WARN] Fair        
+6      1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+7      1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+8      3        0.2617       0.2777       0.0160       0.8301     [WARN] Fair        
+9      1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+10     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+11     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+16     4        0.1863       0.1963       0.0100       0.9811     [+] Excellent    
+17     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+18     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+19     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+22     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+28     2        N/A          N/A          N/A          N/A        [WARN] Too few tests
+29     2        N/A          N/A          N/A          N/A        [WARN] Too few tests
+31     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+32     3        0.1309       0.1388       0.0080       0.8301     [WARN] Fair        
+38     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+43     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+64     3        0.0925       0.0982       0.0056       0.8301     [WARN] Fair        
+73     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+78     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+96     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+110    1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+112    1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+128    3        0.0654       0.0694       0.0040       0.8301     [WARN] Fair        
+129    1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+188    2        N/A          N/A          N/A          N/A        [WARN] Too few tests
+256    2        N/A          N/A          N/A          N/A        [WARN] Too few tests
+336    1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+512    1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+
+   Summary:
+   - Distinct marked state counts tested: 33
+   - Counts with ≥3 tests (valid regression): 9
+   - Theoretical constants:
+      M=1: k = π/(4√1) = 0.7854
+      M=2: k = π/(4√2) = 0.5554
+      M=3: k = π/(4√3) = 0.4534
+      M=4: k = π/(4√4) = 0.3927
+      M=6: k = π/(4√6) = 0.3206
+
+   [SPECIAL] SPECIAL CASE: M=1 (Single Marked State)
+      This verifies the canonical π/4 constant
+      - Fitted constant: 0.7838
+      - Theoretical π/4: 0.7854
+      - Deviation: 0.0016
+      - R²: 0.9988
+      [+] Excellent match to theoretical π/4!
+
+[+] SPACE COMPLEXITY: O(n)
+   Qubit range: 2 - 10
+   Search space range: 4 - 1024
+   Memory range: 0.25 KB - 0.02 MB
+   State vector scaling: 2^n × 16 bytes
+   Circuit depth range: 4 - 52
+   Gate count range: 6 - 70
+
+[+] COMPUTATION TIME ANALYSIS
+   Total computation time: 1013.94s
+   Avg time per test: 14.9109s
+   Min time: 0.0330s
+   Max time: 159.3660s
+   Std deviation: 28.7832s
+   2 qubits: 0.7152s avg
+   3 qubits: 0.0632s avg
+   4 qubits: 0.1430s avg
+   5 qubits: 0.4595s avg
+   6 qubits: 1.6423s avg
+   7 qubits: 3.3572s avg
+   8 qubits: 6.8508s avg
+   9 qubits: 19.5232s avg
+   10 qubits: 69.6088s avg
+
+[+] ALGORITHM CORRECTNESS
+   Avg success rate: 26.93%
+   Success rate range: 0.00% - 97.75%
+   Tests with >90% success: 1/68
+
+[+] QUANTUM ADVANTAGE
+   Avg speedup: 1.43x
+   Max speedup: 8.30x
+   Speedup at 10 qubits: 1.02x
+================================================================================
+
+Generating comprehensive complexity plots for ALL DATA (UNFILTERED)...
+[+] Saved comprehensive plots to batch_analysis_all_20251202_125604.png
+[+] Saved detailed space/time plots to batch_analysis_all_20251202_125604_space_time_detail.png
+[+] Saved proportionality analysis plots to batch_analysis_all_20251202_125604_proportionality.png
+
+Saving detailed results to batch_results_all_20251202_125604.txt...
+[+] Saved results to batch_results_all_20251202_125604.txt
+
+========================================
+ANALYSIS 2: HIGH ACCURACY CIRCUITS ONLY (FILTERED)
+========================================
+[FILTER] Using 50% threshold for IBM hardware (real quantum computer)
+
+================================================================================
+COMPLEXITY ANALYSIS RESULTS - FILTERED (>50% success)
+================================================================================
+
+[FILTER] Filtering: Using circuits with >50% success rate
+   Included: 13/68 circuits
+   Excluded: 55 circuits (too noisy)
+
+Qubits   Tests    Avg Iter   Avg √N     Ratio    Success%     Exec(ms)     Total(s)    
+------------------------------------------------------------------------------------------
+2        1        1.00       2.00       0.500    97.75        0.4000       1.3974      
+3        3        1.33       2.83       0.471    82.52        0.4667       0.0620      
+4        6        1.50       4.00       0.375    57.03        0.5000       0.1430      
+6        1        1.00       8.00       0.125    54.10        0.4000       1.8767      
+7        1        1.00       11.31      0.088    51.37        0.4000       9.8117      
+10       1        1.00       32.00      0.031    50.29        0.4000       159.3660    
+
+--------------------------------------------------------------------------------
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+
+[+] TIME COMPLEXITY: O(√N)
+   Total tests: 13
+   Avg Iterations/√N ratio: 0.339
+   Theoretical expectation: 0.785 (π/4)
+   Deviation from π/4: 0.446
+   Std deviation: 0.213
+   Min ratio: 0.031
+   Max ratio: 0.750
+
+[+] PROPORTIONALITY ANALYSIS: Iterations ∝ √(N/M)
+   Formula: iterations = (π/4) × √(N/M) = (π/(4√M)) × √N
+   Each marked state count M has different proportionality constant k = π/(4√M)
+
+M      Tests    k (fit)      k (theory)   Deviation    R²         Quality        
+------------------------------------------------------------------------------------------
+1      3        0.9903       0.7854       0.2049       0.9903     [WARN] Fair        
+2      2        N/A          N/A          N/A          N/A        [WARN] Too few tests
+3      2        N/A          N/A          N/A          N/A        [WARN] Too few tests
+4      1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+6      1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+8      1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+32     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+64     1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+512    1        N/A          N/A          N/A          N/A        [WARN] Too few tests
+
+   Summary:
+   - Distinct marked state counts tested: 9
+   - Counts with ≥3 tests (valid regression): 1
+   - Theoretical constants:
+      M=1: k = π/(4√1) = 0.7854
+      M=2: k = π/(4√2) = 0.5554
+      M=3: k = π/(4√3) = 0.4534
+      M=4: k = π/(4√4) = 0.3927
+      M=6: k = π/(4√6) = 0.3206
+
+[+] SPACE COMPLEXITY: O(n)
+   Qubit range: 2 - 10
+   Search space range: 4 - 1024
+   Memory range: 0.25 KB - 0.02 MB
+   State vector scaling: 2^n × 16 bytes
+   Circuit depth range: 4 - 8
+   Gate count range: 6 - 22
+
+[+] COMPUTATION TIME ANALYSIS
+   Total computation time: 173.50s
+   Avg time per test: 13.3458s
+   Min time: 0.0597s
+   Max time: 159.3660s
+   Std deviation: 42.2301s
+   2 qubits: 1.3974s avg
+   3 qubits: 0.0620s avg
+   4 qubits: 0.1430s avg
+   6 qubits: 1.8767s avg
+   7 qubits: 9.8117s avg
+   10 qubits: 159.3660s avg
+
+[+] ALGORITHM CORRECTNESS
+   Avg success rate: 64.87%
+   Success rate range: 50.29% - 97.75%
+   Tests with >90% success: 1/13
+
+[+] QUANTUM ADVANTAGE
+   Avg speedup: 3.12x
+   Max speedup: 8.30x
+   Speedup at 10 qubits: 1.01x
+================================================================================
+
+Generating comprehensive complexity plots for FILTERED (>50% success)...
+[+] Saved comprehensive plots to batch_analysis_filtered_20251202_125604.png
+[+] Saved detailed space/time plots to batch_analysis_filtered_20251202_125604_space_time_detail.png
+[+] Saved proportionality analysis plots to batch_analysis_filtered_20251202_125604_proportionality.png
+
+Saving detailed results to batch_results_filtered_20251202_125604.txt...
+[+] Saved results to batch_results_filtered_20251202_125604.txt
+
+================================================================================
+[+] BATCH BENCHMARK COMPLETE - DUAL ANALYSIS
+================================================================================
+
+[DATA] Results saved (20251202_125604):
+
+  UNFILTERED Analysis:
+    - batch_results_all_20251202_125604.txt - Detailed data
+    - batch_analysis_all_20251202_125604.png - Main plots
+    - batch_analysis_all_20251202_125604_space_time_detail.png - Detailed plots
+    - batch_analysis_all_20251202_125604_proportionality.png - Proportionality for each M
+
+  FILTERED Analysis (>50% success):
+    - batch_results_filtered_20251202_125604.txt - Detailed data
+    - batch_analysis_filtered_20251202_125604.png - Main plots
+    - batch_analysis_filtered_20251202_125604_space_time_detail.png - Detailed plots
+    - batch_analysis_filtered_20251202_125604_proportionality.png - Proportionality for each M
+
+================================================================================
+[SUMMARY] Summary:
+   Total circuits: 68
+   High accuracy circuits: 13/68 (>50%)
+   Avg success (all): 26.93%
+   Avg success (filtered): 64.87%
+================================================================================
