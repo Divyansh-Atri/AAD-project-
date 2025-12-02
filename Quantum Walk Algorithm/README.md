@@ -6,7 +6,7 @@
 
 ## Overview
 
-**Quantum Walk Algorithms** is a comprehensive research and implementation project exploring the dynamics of quantum walks on graphs. This repository provides "from-scratch" Python implementations of core quantum algorithms, avoiding black-box libraries for the algorithmic logic to ensure transparency and educational value.
+**Quantum Walk Algorithms** is a comprehensive research and implementation project exploring the dynamics of quantum walks on graphs. This repository provides Python implementations of core quantum algorithms, avoiding black-box libraries for the algorithmic logic.
 
 Key implementations include:
 *   **Discrete-Time Quantum Walks (DTQW):** On line and cycle graphs with configurable coins (Hadamard, Balanced).
@@ -15,13 +15,11 @@ Key implementations include:
 *   **Grover's Search:** A reference implementation of the amplitude amplification algorithm.
 *   **Spatial Search:** DTQW-based search on graphs.
 
-The project is designed for benchmarking, visualization, and experimental analysis, supporting both local simulations and execution on **IBM Quantum** hardware.
 
 ## Features
 
 *   **No Black Boxes:** Algorithms are implemented from first principles using NumPy/SciPy.
 *   **Rich Visualization:** Interactive Plotly surfaces and Matplotlib static plots for analyzing probability distributions.
-*   **IBM Quantum Integration:** Run Grover's algorithm on real quantum hardware via Qiskit Runtime.
 
 ## Project Structure
 
@@ -34,19 +32,14 @@ The project is designed for benchmarking, visualization, and experimental analys
 
 ## Installation
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/yourusername/quantum-walks.git
-    cd quantum-walks
-    ```
 
-2.  **Create a virtual environment (recommended):**
+1.  **Create a virtual environment (recommended):**
     ```bash
     python -m venv venv
     source venv/bin/activate  # On Windows: venv\Scripts\activate
     ```
 
-3.  **Install dependencies:**
+2.  **Install dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
@@ -78,30 +71,6 @@ probs = walk.probabilities(final_state)
 print(probs)
 ```
 
-### IBM Quantum Execution
-
-To run Grover's algorithm on IBM Quantum hardware:
-
-1.  **Set up your credentials:**
-    ```python
-    from qiskit_ibm_runtime import QiskitRuntimeService
-    QiskitRuntimeService.save_account(channel="ibm_quantum", token="YOUR_API_TOKEN")
-    ```
-
-2.  **Run the hardware runner:**
-    ```python
-    from qiskit_ibm_runtime import QiskitRuntimeService
-    from src.quantum_walks.hardware import GroverHardwareRunner
-
-    # Select the least busy backend
-    service = QiskitRuntimeService()
-    backend = service.least_busy(operational=True, simulator=False)
-
-    # Execute Grover's Search
-    runner = GroverHardwareRunner(num_items=16, target_index=5, backend=backend)
-    counts = runner.run(iterations=3, shots=1024)
-    print(f"Results: {counts}")
-    ```
 
 ## License
 
