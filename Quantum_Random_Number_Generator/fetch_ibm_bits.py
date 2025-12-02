@@ -5,7 +5,7 @@ from qiskit_ibm_runtime import QiskitRuntimeService, SamplerV2 as Sampler
 from qiskit.transpiler.preset_passmanagers import generate_preset_pass_manager
 
 # --- CONFIGURATION ---
-API_TOKEN = 'OmhBNbL7tQZJtBgut8Qt9FWn3MzI44O8TjuJyzcenQEL'  # Note: In production, use environment variables
+API_TOKEN = 'PI_TOKEN'  
 NUM_BITS_NEEDED = 10000  # Number of random bits to generate
 OUTPUT_FILE = "true_quantum.bin"
 # ---------------------
