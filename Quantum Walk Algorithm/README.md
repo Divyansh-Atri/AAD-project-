@@ -6,7 +6,7 @@
 
 ## Overview
 
-**Quantum Walk Algorithms** is a comprehensive research and implementation project exploring the dynamics of quantum walks on graphs. This repository provides "from-scratch" Python implementations of core quantum algorithms, avoiding black-box libraries for the algorithmic logic to ensure transparency and educational value.
+**Quantum Walk Algorithms** is a comprehensive research and implementation project exploring the dynamics of quantum walks on graphs. This repository provides Python implementations of core quantum algorithms, avoiding black-box libraries for the algorithmic logic.
 
 Key implementations include:
 *   **Discrete-Time Quantum Walks (DTQW):** On line and cycle graphs with configurable coins (Hadamard, Balanced).
@@ -20,7 +20,6 @@ Key implementations include:
 
 *   **No Black Boxes:** Algorithms are implemented from first principles using NumPy/SciPy.
 *   **Rich Visualization:** Interactive Plotly surfaces and Matplotlib static plots for analyzing probability distributions.
-*   **IBM Quantum Integration:** Run Grover's algorithm on real quantum hardware via Qiskit Runtime.
 
 ## Project Structure
 
